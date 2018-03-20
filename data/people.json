@@ -1,0 +1,16 @@
+[
+    {
+        "fullName": "Simon",
+        "address": "21 Jump Street",
+        "email": "json@gmail.com",
+        "phone": "12312312",
+        "website": "www.not-a-site.com"
+    },
+    {
+        "fullName": "Jack",
+        "address": "Shi Tpa Town",
+        "email": "jack103@gmail.com",
+        "phone": "12312312",
+        "website": "www.southpark.com"
+    }
+]

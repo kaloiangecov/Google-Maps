@@ -1,0 +1,43 @@
+<div class="leftPanel">
+    <form name="peopleSearch" novalidate ng-submit="submitData(person)">
+        <div class="form-group">
+            <input type="text" class="form-control" id="fullName" placeholder="Full name" name="fullName" autofocus ng-required="true"
+                ng-model="person.fullName" ng-pattern=fullNameRegex>
+            <div class="error-message" ng-show="peopleSearch.fullName.$touched && peopleSearch.fullName.$invalid">Please enter correct full name!</div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="address" placeholder="Address" name="address" ng-required="true" ng-model="person.address"> 
+            <div class="error-message" ng-show="peopleSearch.address.$touched && peopleSearch.address.$invalid">Please enter correct address!</div>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-required="true" ng-model="person.email">
+            <div class="error-message" ng-show="peopleSearch.email.$touched && peopleSearch.email.$invalid">Please enter correct email!</div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" ng-required="true" ng-model="person.phone"
+                ng-pattern=phoneNumberRegex>
+            <div class="error-message" ng-show="peopleSearch.phone.$touched && peopleSearch.phone.$invalid">Please enter correct telephone number!</div>
+        </div>
+        <div class="form-group">
+            <input type="url" class="form-control" id="website" placeholder="Website" name="website" ng-required="true" ng-model="person.website">
+            <div class="error-message" ng-show="peopleSearch.website.$touched && peopleSearch.website.$invalid">Please enter correct website link!</div>
+        </div>
+        <button type="submit" class="btn btn-default" ng-disabled="peopleSearch.$invalid" id="btn-submit">Submit</button>
+        <button type="reset" id="resetButton" class="btn btn-default" value="Reset">Reset</button>
+    </form>
+    {{result}}
+    <script>
+        var content = document.getElementById('address').value;
+    </script>
+    <ul>
+        <li ng-repeat="person in people">
+            {{person.email}}
+        </li>
+    </ul>
+</div>
+<div class="rightPanel">
+    <h3>Google map search</h3>
+    {{lastPerson}}
+    <my-map id="map-canvas" person="lastPerson">
+    </my-map>
+</div>
